@@ -1,0 +1,45 @@
+import React from "react";
+import useButtonController from "./useButtonController";
+import { Button } from "@mui/material";
+import PropTypes from "prop-types";
+const CustomButton = ({
+  variant,
+  children,
+  href,
+  disabled,
+  onClick,
+  color,
+  size,
+  startIcon,
+  endIcon,
+  style,
+  sx
+}) => {
+  const {
+    text,
+    setText
+  } = useButtonController();
+  return /*#__PURE__*/React.createElement(Button, {
+    variant: variant,
+    disabled: disabled,
+    href: href,
+    onClick: onClick,
+    color: color,
+    size: size,
+    startIcon: startIcon,
+    endIcon: endIcon,
+    sx: sx,
+    style: style
+  }, children);
+};
+CustomButton.defaultProps = {
+  variant: "contained",
+  color: "secondary",
+  size: "large"
+};
+CustomButton.propTypes = {
+  variant: PropTypes.oneOf(["text", "contained", "outlined"]),
+  color: PropTypes.oneOf(["primary", "secondary", "success", "error"]),
+  size: PropTypes.oneOf(["small", "medium", "large"])
+};
+export default CustomButton;

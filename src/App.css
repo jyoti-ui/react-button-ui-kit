@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin:auto;
+  padding: 10px;  
+}
+
+.flex-item {
+  margin: 10px;
 }
 
 .App-logo {
