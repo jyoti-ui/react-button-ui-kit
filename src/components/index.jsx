@@ -1,7 +1,15 @@
-import React from "react";
-import useButtonController from "./useButtonController";
+import React, { useState } from "react";
 import { Button } from "@mui/material";
 import PropTypes from "prop-types";
+
+const useButtonController = () => {
+  const [text, setText] = useState("Hi")
+
+return {
+  text, 
+  setText
+};
+};
 
 const CustomButton = ({
   variant,
